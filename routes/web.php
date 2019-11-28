@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route ::get("/produits", function(){
+    return "je suis un produits du routeur";
+});
+ 
+Route ::get("/produits" ,"Productscontroller@index");
+    
+// Route ::get("/produits/{id}" ,"Productscontroller@show");
+    
+Route ::get("/" ,"HomeController@index");
+
+Route ::get("/products/{id}" ,"HomeController@show");
