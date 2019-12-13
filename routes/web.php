@@ -18,11 +18,30 @@ Route::get('/', function () {
 Route ::get("/produits", function(){
     return "je suis un produits du routeur";
 });
- 
+
 Route ::get("/produits" ,"Productscontroller@index");
-    
-// Route ::get("/produits/{id}" ,"Productscontroller@show");
-    
 Route ::get("/" ,"HomeController@index");
 
+
+
 Route ::get("/products/{id}" ,"HomeController@show");
+
+Route ::resource('products',"ProductsController");
+Route::get("/product/edit/{id}", "ProductsController@edit")->name('editer_produit');
+Route::patch("/product/edit/{id}", "ProductsController@update")->name('update_produit');
+
+Route::resource('categories','CategoriesController');
+Route::get("/category/edit/{id}", "CategoriesController@edit")->name('editer_category');
+Route::patch("/category/edit/{id}", "CategoriesController@update")->name('update_category');
+
+Route::resource('clients', 'ClientsController');
+Route::get("/client/edit/{id}", "ClientsController@edit")->name('editer_client');
+Route::patch("/client/edit/{id}", "ClientsController@update")->name('update_client');
+
+Route ::resource('traders',"TradersController");
+Route::get("/trader/edit/{id}", "TradersController@edit")->name('editer_commercant');
+Route::patch("/trader/edit/{id}", "TradersController@update")->name('update_commercant');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
