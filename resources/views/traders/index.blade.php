@@ -21,7 +21,7 @@
             <th>
                 <p><a href="{{route('editer_commercant',['id'=>$trader->id])}}" class="btn btn-primary">Editer</a>
                 </p>
-                <form action="product/{{$trader->id}}" method="post">
+                <form action="trader/{{$trader->id}}" method="post">
                     @csrf
                     @method('delete')
                     <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">

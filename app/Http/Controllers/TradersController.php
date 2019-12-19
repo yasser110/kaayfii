@@ -40,8 +40,9 @@ class TradersController extends Controller
         $trader = new Trader();
         $trader->username = $request->input('username');
         $trader->email = $request->input('email');
-        $trader->phone = $request->input('phone');
+        $trader->phone = $request->input('');
         $trader->save();
+        return redirect('/');
     }
 
     /**
@@ -98,6 +99,6 @@ class TradersController extends Controller
         $trader = Trader::find($id);
         if($trader)
             $trader->delete();
-        return redirect()->route('trader.index');
+        return redirect()->route('traders.index');
     }
 }

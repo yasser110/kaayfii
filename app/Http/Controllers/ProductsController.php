@@ -129,7 +129,7 @@ class ProductsController extends Controller
         $product = Product::find($id);
         if($product)
             $product->delete();
-        return redirect()->route('product.index');
+        return redirect()->route('products.index');
     }
 
     public function uploadImage(UploadedFile $uploadedFile, $folder = null, $disk = 'public', $filename = null)
