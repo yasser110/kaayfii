@@ -46,4 +46,6 @@ Route::delete('trader/{id}', 'TradersController@destroy')->name('supprimer_comme
 
 Auth::routes();
 
+Route::get("/Produit", "ProduitController@Produit")->name('produit');
+
 Route::get('/home', 'HomeController@index')->name('home');

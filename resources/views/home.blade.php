@@ -49,7 +49,7 @@
                                     <ul id="navigation">
 
                                         <li><a class="boxed_btn" href="accueil.html">accueil</a></li>
-                                        <li><a class="boxed_btn_orange" href="Produit.html">Produit</a></li>
+                                        <li><a class="boxed_btn_orange" href="{{asset('Produit')}}">Produit</a></li>
                                         <li><a class="boxed_btn" href="#">pages <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a class="boxed_btn_orange" href="course_details.html">course details</a></li>
