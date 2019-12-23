@@ -32,8 +32,8 @@ Route::patch("/product/edit/{id}", "ProductsController@update")->name('update_pr
 Route::delete('product/{id}', 'ProductsController@destroy');
 
 Route::resource('categories','CategoriesController');
-Route::get("/categorie/edit/{id}", "CategoriesController@edit")->name('editer_category');
-Route::patch("/categorie/edit/{id}", "CategoriesController@update")->name('update_category');
+Route::get("/categorie/edit/{id}", "CategoriesController@edit")->name('editer_categories');
+Route::patch("/categorie/edit/{id}", "CategoriesController@update")->name('update_categories');
 
 Route::resource('clients', 'ClientsController');
 Route::get("/client/edit/{id}", "ClientsController@edit")->name('editer_client');
@@ -43,6 +43,8 @@ Route ::resource('traders',"TradersController");
 Route::get("/trader/edit/{id}", "TradersController@edit")->name('editer_commercant');
 Route::patch("/trader/edit/{id}", "TradersController@update")->name('update_commercant');
 Route::delete('trader/{id}', 'TradersController@destroy')->name('supprimer_commercant');
+
+Route::resource('commande', 'CommandesController');
 
 Auth::routes();
 

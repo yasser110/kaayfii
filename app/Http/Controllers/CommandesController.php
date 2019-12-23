@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Categorie;
 use Illuminate\Http\Request;
 
-class CategoriesController extends Controller
+class CommandesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +13,11 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Categorie::all();Categorie::all();
-        return view('categories.index',compact('categories'));
+        $commandes = \App\Commande::orderBy('created_at', 'DESC')->get();
+        return view('commandes.index', compact('commandes'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -25,7 +26,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
+        //
     }
 
     /**
@@ -36,13 +37,7 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-       // $name = $request->input('name');
-       // Categorie::create(['name'=>$request->input('name')]);
-        $categories= new Categorie();
-        $categories->name = $request->input('name');
-        $categories->type = $request->input('type');
-        $categories->save();
-        return redirect('/');
+        //
     }
 
     /**
@@ -64,8 +59,7 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        $categories = \App\Categorie::find($id);
-        return view('categories.edit', compact('categories'));
+        //
     }
 
     /**
@@ -75,17 +69,9 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categorie $categories)
+    public function update(Request $request, $id)
     {
-        $categories = \App\Product::find($id);
-        if($categories) {
-            $request->validate(['name' => 'required | min:3']);
-            $categories->update([
-                'name' => $request->input('name'),
-                'type' => $request->input('type'),
-            ]);
-        }
-            return redirect()->route('categories.index');
+        //
     }
 
     /**

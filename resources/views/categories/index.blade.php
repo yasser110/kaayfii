@@ -28,5 +28,10 @@
              @endforeach
         </div>
         <p><a href="{{route('editer_categories',['id'=>$categorie->id])}}" class="btn btn-primary">Editer</a></p>
+        <form action="categories/{{$categorie->id}}" method="post">
+            @csrf
+            @method('delete')
+            <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">
+        </form>
     </div>
 @endsection

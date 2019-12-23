@@ -27,7 +27,8 @@ class AddPriceAndCategorieIdColumnsToProductsTable extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            Schema::dropIfExists('products');
+            $table->dropColumn('price');
+            $table->dropColumn('categorie_id');
         });
     }
 }

@@ -13,8 +13,10 @@
         @foreach($products as $product)
             <tr>
                 <th>#</th>
-                <th>{{$product->name}} - <img src="{{$product->images ? asset($product->images) : asset('uploads/images/default.png')}}" alt="{{$product->name}}" width="50"></th>
-                <th>{{$product->price}} {{ $product->category->name ?? '' }}</th>
+                <th>
+                    {{$product->name}} - <img src="{{$product->images ? asset($product->images) : asset('uploads/images/default.png')}}" alt="{{$product->name}}" width="50"></th>
+                <th>
+                    {{$product->price}} {{ $product->category->name ?? '' }}</th>
                 <th>
                     <p><a href="{{route('editer_produit',['id'=>$product->id])}}" class="btn btn-primary">Editer</a>
                     </p>

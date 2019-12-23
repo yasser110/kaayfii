@@ -8,6 +8,6 @@ class ProduitController extends Controller
 {
     public function Produit ()
     {
-        return ("Produit");
+        return view ("produit");
     }
 }
