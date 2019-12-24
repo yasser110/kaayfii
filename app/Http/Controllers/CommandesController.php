@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Commande;
 use Illuminate\Http\Request;
 
 class CommandesController extends Controller
@@ -26,7 +27,7 @@ class CommandesController extends Controller
      */
     public function create()
     {
-        //
+        return view('commandes.create');
     }
 
     /**
@@ -37,7 +38,14 @@ class CommandesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $commandes = new Commande();
+        $commandes->num_commande = $request->input('num_commande');
+        $commandes->pseudo_client = $request->input('pseudo_client');
+        $commandes->liste_produits = $request->input('liste_produits');
+        $commandes->quantite_produits = $request->input('quantite_produits');
+        $commandes->price_commande = $request->input('price_commande');
+        $commandes->save();
+        return redirect('/');
     }
 
     /**
@@ -59,7 +67,8 @@ class CommandesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $commandes = \App\Commande::find($id);//on recupere la comm
+        return view('commandes.edit', compact('commandes'));
     }
 
     /**
@@ -71,7 +80,17 @@ class CommandesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $commandes = \App\Commande::find($id);
+        if($commandes){
+            $commandes->update([
+                'num_commande' => $request->input('num_commande'),
+                'pseudo_client' => $request->input('price'),
+                'liste_produits' => $request->input('liste_produits'),
+                'quantite_produits' => $request->input('quantite_produits'),
+                'price_commande' => $request->input('price_commande'),
+            ]);
+        }
+        return redirect()->back();
     }
 
     /**
@@ -82,6 +101,9 @@ class CommandesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $commandes = Commande::find($id);
+        if($commandes)
+            $commandes->delete();
+        return redirect()->route('commandes.index');
     }
 }

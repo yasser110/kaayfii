@@ -16,7 +16,7 @@ class AddNumCommandeAndPseudoClientAndListeProduitsAndQuantitesProduitAndPrixCom
         Schema::table('commandes', function (Blueprint $table) {
                 $table->bigInteger('num_commande')->default(0);
                 $table->string('pseudo_client');
-                $table->lineString('liste_produits');
+                $table->String('liste_produits');
                 $table->integer('quantite_produits');
                 $table->bigInteger('price_commande');
         });

@@ -44,7 +44,9 @@ Route::get("/trader/edit/{id}", "TradersController@edit")->name('editer_commerca
 Route::patch("/trader/edit/{id}", "TradersController@update")->name('update_commercant');
 Route::delete('trader/{id}', 'TradersController@destroy')->name('supprimer_commercant');
 
-Route::resource('commande', 'CommandesController');
+Route::resource('commandes', 'CommandesController');
+Route::get("/commande/edit/{id}", "CommandesController@edit")->name('editer_commande');
+Route::patch("/commande/edit/{id}", "CommandesController@update")->name('update_commande');
 
 Auth::routes();
 
