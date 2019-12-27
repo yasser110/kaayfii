@@ -40,9 +40,10 @@ class CategoriesController extends Controller
        // Categorie::create(['name'=>$request->input('name')]);
         $categories= new Categorie();
         $categories->name = $request->input('name');
-        $categories->type = $request->input('type');
+       // $categories->type = $request->input('type');
         $categories->save();
-        return redirect('/');
+        return redirect()->route('categories.index');
+        //return redirect('/');
     }
 
     /**
@@ -75,14 +76,13 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categorie $categories)
+    public function update(Request $request, $id ,Categorie $categories)
     {
-        $categories = \App\Product::find($id);
+        $categories = \App\Categorie::find($id);
         if($categories) {
             $request->validate(['name' => 'required | min:3']);
             $categories->update([
                 'name' => $request->input('name'),
-                'type' => $request->input('type'),
             ]);
         }
             return redirect()->route('categories.index');
@@ -96,6 +96,9 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categories = Categorie::find($id);
+        if($categories)
+            $categories->delete();
+        return redirect()->route('categories.index');
     }
 }

@@ -43,7 +43,7 @@ class ProductsController extends Controller
     {
         $data = $request->validate([
             'name' => 'required|max:300|min:5',
-            'price' => 'required|max:7|numeric',
+            'price' => 'required|max:70000000|numeric',
             "product_image" => 'nullable | image | mimes:jpeg,png,jpg,gif | max: 2048',
             'description' => 'max:1000000'
         ]);
@@ -65,10 +65,9 @@ class ProductsController extends Controller
         $product->name = $request->input('name');
         $product->price = $request->input('price');
         $product->description = $request->input('description');
-        $product->category_id = $request->input('categorie_id');
+        $product->categorie_id = $request->input('categorie_id');
         $product->save();
-        return redirect(route('product.index'));
-        //  return redirect('/');
+        return redirect()->route('products.index');
     }
 
 
@@ -93,7 +92,7 @@ class ProductsController extends Controller
     public function edit($id)
     {
         $product = \App\Product::find($id);//on recupere le produit
-        $category = \App\Categorie::pluck('name','id');
+        $categories = \App\Categorie::pluck('name','id');
         return view('products.edit', compact('product','categories'));
     }
 
@@ -106,16 +105,34 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $data = $request->validate([
+            'name'   => 'required',
+            'price' => 'required | numeric',
+            'product_image' => 'nullable | image | mimes:jpeg,png,jpg,gif | max:2048'
+        ]);
         $product = \App\Product::find($id);
         if($product){
-            $product->update([
-                'name' => $request->input('name'),
-                'price' => $request->input('price'),
-                'description' => $request->input('description'),
-                'categorie_id' => $request->input('category_id'),
-            ]);
-        }
-        return redirect()->back();
+            if($request->has('product_image')){
+                //On enregistre l'image dans une variable
+                $image = $request->file('product_image');
+                if(file_exists(public_path().$product->images))//On verifie si le fichier existe
+                    Storage::delete(asset($product->images));//On le supprime alors
+                //Nous enregistrerons nos fichiers dans /uploads/images dans public
+                $folder = '/uploads/images/';
+                $image_name = Str::slug($request->input('name')).'_'.time();
+                $product->images = $folder.$image_name.'.'.$image->getClientOriginalExtension();
+                //Maintenant nous pouvons enregistrer l'image dans le dossier en utilisant la méthode uploadImage();
+                $this->uploadImage($image, $folder, 'public', $image_name);
+            }
+            $product->name  = $request->input('name');
+            $product->price = $request->input('price');
+            $product->description = $request->input('description');
+            $product->categorie_id = $request->input('categorie_id');
+
+            $product->save();
+
+    }
+        return redirect()->route('products.index');
     }
 
     /**

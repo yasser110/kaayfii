@@ -1,10 +1,10 @@
-@extends('layouts')
+@extends('layouts.app')
 
 @section('content')
 
     <div class="container">
         <div>
-            <p><a href="{{route('categories.index')}}">{{__('Enregistrement d\'un produit')}}</a></p>
+            <p><a href="{{route('categories.index')}}">{{__('Enregistrement d\'une category')}}</a></p>
         </div>
         <div class="container">
             <form action="{{route('categories.store')}}" method="post">

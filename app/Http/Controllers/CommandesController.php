@@ -45,7 +45,7 @@ class CommandesController extends Controller
         $commandes->quantite_produits = $request->input('quantite_produits');
         $commandes->price_commande = $request->input('price_commande');
         $commandes->save();
-        return redirect('/');
+        return redirect()->route('commandes.index');
     }
 
     /**
@@ -84,13 +84,13 @@ class CommandesController extends Controller
         if($commandes){
             $commandes->update([
                 'num_commande' => $request->input('num_commande'),
-                'pseudo_client' => $request->input('price'),
+                'pseudo_client' => $request->input('pseudo_client'),
                 'liste_produits' => $request->input('liste_produits'),
                 'quantite_produits' => $request->input('quantite_produits'),
                 'price_commande' => $request->input('price_commande'),
             ]);
         }
-        return redirect()->back();
+        return redirect()->route('commandes.index');
     }
 
     /**

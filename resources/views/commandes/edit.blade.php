@@ -17,7 +17,7 @@
                 {{$commandes->liste_produits}} </textarea>
         </div>
         <div>
-            <input type="text" name="quantite_produits" class="form-control" placeholder="la quantite des produits" value="{{$commandes->quantity_produits}}">
+            <input type="text" name="quantite_produits" class="form-control" placeholder="la quantite des produits" value="{{$commandes->quantite_produits}}">
         </div>
         <div>
             <input type="text" name="price_commande" class="form-control" placeholder="Le pseudo du produit" value="{{$commandes->price_commande}}">
