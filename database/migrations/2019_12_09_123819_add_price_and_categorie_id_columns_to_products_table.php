@@ -14,8 +14,8 @@ class AddPriceAndCategorieIdColumnsToProductsTable extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-                $table->bigInteger('price')->default(0)->after('name');
-                $table->bigIncrements('categorie_id')->after('description');
+                $table->bigInteger('price')->after('name');
+                $table->bigInteger('categorie_id')->after('description');
             });
     }
 
