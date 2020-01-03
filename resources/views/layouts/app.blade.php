@@ -18,6 +18,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/all.css') }}" rel="stylesheet">
+    <style>
+        .main-menu.d-none.d-lg-block a {
+            color: #212529 !important;
+        }
+    </style>
 </head>
 <body>
     <div id="app">

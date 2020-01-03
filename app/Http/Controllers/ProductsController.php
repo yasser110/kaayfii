@@ -128,8 +128,7 @@ class ProductsController extends Controller
             $product->name  = $request->input('name');
             $product->price = $request->input('price');
             $product->description = $request->input('description');
-            $product->categorie_id = $request->input('categorie_id');
-
+            $product->categorie_id = $request->input('category_id');
             $product->save();
 
     }

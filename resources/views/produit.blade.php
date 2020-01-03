@@ -195,7 +195,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-50" src="{{asset('image/pc.jpg')}}"  alt="Un tigre">
+            <img class="d-block w-50" src="{{asset('image/o.jpg')}}"  alt="Un tigre">
             <div class="carousel-caption d-none d-md-block">
                 <h1>asus avec SSD</h1>
             </div>
@@ -208,6 +208,169 @@
         </div>
     </div>
 </div>
+
+
+<div class="all_courses">
+    <div class="container">
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single_courses">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="{{asset('image/Ordi2.jpg')}}" alt="">
+                                </a>
+                            </div>
+                            <div class="courses_info">
+                                <span>dell corei7</span>
+                                <h3><a href="#">Mobile App design step by step <br>
+                                        from beginner</a></h3>
+                                <div class="star_prise d-flex justify-content-between">
+                                    <div class="star">
+                                        <i class="flaticon-mark-as-favorite-star"></i>
+                                        <span>(4.5)</span>
+                                    </div>
+                                    <div class="prise">
+                                        <span class="offer">145000</span>
+                                        <span class="active_prise">
+                                                            145000
+                                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single_courses">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="{{asset('image/ordi7.jpg')}}" alt="">
+                                </a>
+                            </div>
+                            <div class="courses_info">
+                                <span>VideoProjecteur</span>
+                                <h3><a href="#">Le vidéoprojecteur BenQ W1500 est un modèle DLP 1080p compatible 3D,<br>
+                                        pouvant fonctionner sans fil</a></h3>
+                                <div class="star_prise d-flex justify-content-between">
+                                    <div class="star">
+                                        <i class="flaticon-mark-as-favorite-star"></i>
+                                        <span>(4.5)</span>
+                                    </div>
+                                    <div class="prise">
+                                        <span class="offer">450000</span>
+                                        <span class="active_prise">
+                                                            $49
+                                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single_courses">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="{{asset('image/ordi6.jpeg')}}" alt="">
+                                </a>
+                            </div>
+                            <div class="courses_info">
+                                <span> BenQ W1500</span>
+                                <h3><a href="#">Le vidéoprojecteur BenQ W1500 est  <br>
+                                        un modèle DLP 10...</a></h3>
+                                <div class="star_prise d-flex justify-content-between">
+                                    <div class="star">
+                                        <i class="flaticon-mark-as-favorite-star"></i>
+                                        <span>(4.5)</span>
+                                    </div>
+                                    <div class="prise">
+                                        <span class="offer">380000</span>
+                                        <span class="active_prise">
+                                                            $49
+                                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single_courses">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="{{asset('image/ordi5.jpg')}}" alt="">
+                                </a>
+                            </div>
+                            <div class="courses_info">
+                                <span>Photoshop</span>
+                                <h3><a href="#">Mobile App design step by step <br>
+                                        from beginner</a></h3>
+                                <div class="star_prise d-flex justify-content-between">
+                                    <div class="star">
+                                        <i class="flaticon-mark-as-favorite-star"></i>
+                                        <span>(4.5)</span>
+                                    </div>
+                                    <div class="prise">
+                                        <span class="offer">$89.00</span>
+                                        <span class="active_prise">
+                                                            $49
+                                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single_courses">
+                            <div class="thumb">
+                                <img src="{{asset('image/ordi8.jpg')}}" alt="">
+                            </div>
+                            <div class="courses_info">
+                                <span>UI/UX</span>
+                                <h3><a href="#">How to complete user research <br>
+                                        and make work flow</a></h3>
+                                <div class="star_prise d-flex justify-content-between">
+                                    <div class="star">
+                                        <i class="flaticon-mark-as-favorite-star"></i>
+                                        <span>(4.5)</span>
+                                    </div>
+                                    <div class="prise">
+                                        <span class="offer">$89.00</span>
+                                        <span class="active_prise">
+                                                            $49
+                                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single_courses">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="{{asset('image/ordi9.jpg')}}" alt="">
+                                </a>
+                            </div>
+                            <div class="courses_info">
+                                <span>Tablette IPAD PRO</span>
+                                <h3><a href="#">Tablette IPAD PRO Modèle 2017 Apple - 10.5'' - 64 GB - WIFI <br>
+                                        - rétroéclairage par LED  <br>
+                                        Apple A10X Fusion Système d'exploitation :</a></h3>
+                                <div class="star_prise d-flex justify-content-between">
+                                    <div class="star">
+                                        <i class="flaticon-mark-as-favorite-star"></i>
+                                        <span>(4.5)</span>
+                                    </div>
+                                    <div class="prise">
+                                        <span class="offer">$89.00</span>
+                                        <span class="active_prise">
+                                                            $49
+                                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <div class="all_courses">
+
 
 
 

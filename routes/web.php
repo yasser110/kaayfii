@@ -55,5 +55,8 @@ Route::get("/commande/create/{id}", "CommandesController@create")->name('ajouter
 Auth::routes();
 
 Route::get("/Produit", "ProduitController@Produit")->name('produit');
+Route::get("/Info", "InfoController@Informatique")->name('informatique');
+Route::get("/Meubles", "MeublesController@Meubles")->name('meubles');
+Route::get("/Homme", "HommeController@Homme")->name('homme');
 
 Route::get('/home', 'HomeController@index')->name('home');

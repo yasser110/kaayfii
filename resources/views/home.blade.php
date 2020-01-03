@@ -53,13 +53,13 @@
                                         <li><a class="boxed_btn" href="#">Electronique <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a class="boxed_btn_orange" href="course_details.html">Smartphone</a></li>
-                                                <li><a class="boxed_btn_orange" href="elements.html">informatique</a></li>
+                                                <li><a class="boxed_btn_orange" href="{{asset('Informatique')}}">informatique</a></li>
                                             </ul>
                                         </li>
-                                        <li><a class="boxed_btn_orange" href="about.html">Meubles</a></li>
+                                        <li><a class="boxed_btn_orange" href="{{asset('Meubles')}}">Meubles</a></li>
                                         <li><a href="#">Mode <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
-                                                <li><a href="blog.html">Homme</a></li>
+                                                <li><a href="{{asset('Homme')}}">Homme</a></li>
                                                 <li><a href="single-blog.html">Femme</a></li>
                                             </ul>
                                         </li>

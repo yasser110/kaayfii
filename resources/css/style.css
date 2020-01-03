@@ -6657,3 +6657,6 @@ h6 {
 }
 
 /*# sourceMappingURL=style.css.map */
+.main-menu.d-none.d-lg-block a {
+    color: #212529 !important;
+}
