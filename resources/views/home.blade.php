@@ -38,7 +38,7 @@
                     <div class="row align-items-center no-gutters">
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo-img">
-                                <a href="index.html">
+                                <a href="{{asset('home')}}">
                                     <img src="{{asset('image/img/logo.png')}}" alt="">
                                 </a>
                             </div>
@@ -48,24 +48,30 @@
                                 <nav>
                                     <ul id="navigation">
 
-                                        <li><a class="boxed_btn"  href="accueil.html">accueil</a></li>
-                                        <li><a class="boxed_btn_orange" href="{{asset('Produit')}}">Produit</a></li>
-                                        <li><a class="boxed_btn" href="#">Electronique <i class="ti-angle-down"></i></a>
+                                        <li><a class="boxed_btn"  href="{{asset('home')}}">accueil</a></li>
+                                        <li><a class="" href="{{asset('Produit')}}">Produit</a></li>
+                                        <li><a class="" href="#">Electronique <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
-                                                <li><a class="boxed_btn_orange" href="course_details.html">Smartphone</a></li>
-                                                <li><a class="boxed_btn_orange" href="{{asset('Informatique')}}">informatique</a></li>
+                                                <li><a class="boxed_btn_orange" href="{{asset('Smartphone')}}">Smartphone</a></li>
+                                                <li><a class="boxed_btn_orange" href="{{asset('Info')}}">informatique</a></li>
                                             </ul>
                                         </li>
-                                        <li><a class="boxed_btn_orange" href="{{asset('Meubles')}}">Meubles</a></li>
+                                        <li><a class="boxed" href="{{asset('Meubles')}}">Meubles</a></li>
                                         <li><a href="#">Mode <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a href="{{asset('Homme')}}">Homme</a></li>
-                                                <li><a href="single-blog.html">Femme</a></li>
+                                                <li><a href="{{asset('Femme')}}">Femme</a></li>
                                             </ul>
                                         </li>
-                                        <li><a class="boxed_btn" href="contact.html">Contact</a></li>
+                                        <li><a class="boxed" href="{{asset('Contact')}}">Contact</a></li>
 
-                                        @guest
+                                      
+
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        @guest
                                             <li class="nav-item">
                                                 <a  class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                             </li>
@@ -93,25 +99,11 @@
                                                 </div>
                                             </li>
                                         @endguest
-
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                            <div class="log_chat_area d-flex align-items-center">
-                                <a href="#test-form" class="login popup-with-form">
-                                    <i class="flaticon-user"></i>
-                                    <span>Se connecter</span>
-                                </a>
-                                <div class="live_chat_btn">
-
-                                </div>
-                            </div>
-                        </div>
+                       
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
                         </div>
+                      
                     </div>
                 </div>
             </div>
@@ -134,7 +126,7 @@
                             <h3>tous Ce Que <br>
                                 Vous chercher<br>
                                 Rapidemment et Surement </h3>
-                            <a href="#" class="boxed_btn">rechercher d,autre produit</a>
+                            <a href="{{asset('Produit')}}" class="boxed_btn">rechercher d,autre produit</a>
                         </div>
                     </div>
                 </div>
@@ -154,7 +146,7 @@
                         <p> chaque jour on recoit de nouvelle produit sur notre site kaay fii
                             et on essais de satisfaire les commandes et livraisons a temps reel
                             comme du tik tak  </p>
-                        <a href="#" class="boxed_btn">acheter un produit</a>
+                        <a href="{{asset('Produit')}}" class="boxed_btn">acheter un produit</a>
                     </div>
                 </div>
                 <div class="col-xl-6 offset-xl-1 col-lg-6">
@@ -452,7 +444,35 @@
 
 
         <!-- form itself end-->
-        <form id="test-form" class="white-popup-block mfp-hide">
+        @guest
+                                            <li class="nav-item">
+                                                <a  class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                            </li>
+                                            @if (Route::has('register'))
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                                </li>
+                                            @endif
+                                        @else
+                                            <li class="nav-item dropdown">
+                                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                                </a>
+
+                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                                    <a class="dropdown-item-blue" href="{{ route('logout') }}"
+                                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                        {{ __('Logout') }}
+                                                    </a>
+
+                                                    <form class="boxed-btn-blue" id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                        @csrf
+                                                    </form>
+                                                </div>
+                                            </li>
+                                        @endguest
+        <!-- <form id="test-form" class="white-popup-block mfp-hide">
              <div class="popup_box ">
                  <div class="popup_inner">
                      <div class="logo text-center">
@@ -560,7 +580,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
         <!-- form itself end-->
         <form id="test-form2" class="white-popup-block mfp-hide">
@@ -601,5 +621,35 @@
 @endsection
 
 
+<!-- JS here -->
+<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="js/vendor/jquery-1.12.4.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/ajax-form.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/scrollIt.js"></script>
+<script src="js/jquery.scrollUp.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/nice-select.min.js"></script>
+<script src="js/jquery.slicknav.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/gijgo.min.js"></script>
 
+<!--contact js-->
+<script src="js/contact.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="js/jquery.form.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/mail-script.js"></script>
+
+<script src="js/main.js"></script>
 </body>
+
+</html>
+

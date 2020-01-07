@@ -58,5 +58,8 @@ Route::get("/Produit", "ProduitController@Produit")->name('produit');
 Route::get("/Info", "InfoController@Informatique")->name('informatique');
 Route::get("/Meubles", "MeublesController@Meubles")->name('meubles');
 Route::get("/Homme", "HommeController@Homme")->name('homme');
+Route::get("/Smartphone", "SmartphoneController@Smartphone")->name('smartphone');
+Route::get("/Contact", "ContactController@Contact")->name('Contact');
+Route::get("/Femme", "FemmeController@Femme")->name('Femme');
 
 Route::get('/home', 'HomeController@index')->name('home');
