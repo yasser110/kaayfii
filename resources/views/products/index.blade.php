@@ -41,7 +41,7 @@
     </table>
 
         <p>
-            <a href="{{route('ajouter_produit',['id'=>$product->id])}}" class="btn btn-primary">ajouter</a>
+            <a href="{{route('ajouter_produit')}}" class="btn btn-primary">ajouter</a>
         </p>
 
     </div>

@@ -30,7 +30,7 @@ Route ::resource('products',"ProductsController");
 Route::get("/product/edit/{id}", "ProductsController@edit")->name('editer_produit');
 Route::patch("/product/edit/{id}", "ProductsController@update")->name('update_produit');
 Route::delete('product/{id}', 'ProductsController@destroy');
-Route::get("/product/create/{id}", "ProductsController@create")->name('ajouter_produit');
+Route::get("/product/create", "ProductsController@create")->name('ajouter_produit');
 
 Route::resource('categories','CategoriesController');
 Route::get("/categorie/edit/{id}", "CategoriesController@edit")->name('editer_categories');
@@ -50,7 +50,7 @@ Route::resource('commandes', 'CommandesController');
 Route::get("/commande/edit/{id}", "CommandesController@edit")->name('editer_commande');
 Route::patch("/commande/edit/{id}", "CommandesController@update")->name('update_commande');
 Route::delete("/commande/{id}", "CommandesController@destroy")->name('supprimer_commande');
-Route::get("/commande/create/{id}", "CommandesController@create")->name('ajouter_commande');
+Route::get("/commande/create", "CommandesController@create")->name('ajouter_commande');
 
 Auth::routes();
 

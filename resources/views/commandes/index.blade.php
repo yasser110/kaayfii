@@ -38,7 +38,7 @@
 </table>
 
         <p>
-            <a href="{{route('ajouter_commande',['id'=>$commande->id])}}" class="btn btn-primary">ajouter</a>
+            <a href="{{route('ajouter_commande')}}" class="btn btn-primary">ajouter</a>
         </p>
 
 

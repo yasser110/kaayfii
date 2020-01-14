@@ -38,8 +38,8 @@
                     <div class="row align-items-center no-gutters">
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo-img">
-                                <a href="{{asset('home')}}">
-                                    <img src="{{asset('image/img/logo.png')}}" alt="">
+                                <a href="{{asset('home')}}">KAAYFII
+                                    <img src="{{asset('image/lo.png')}}" alt="">
                                 </a>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                                 <nav>
                                     <ul id="navigation">
 
-                                        <li><a class="boxed_btn"  href="{{asset('home')}}">accueil</a></li>
+                                        <li><a class="active"  href="{{asset('home')}}">accueil</a></li>
                                         <li><a class="" href="{{asset('Produit')}}">Produit</a></li>
                                         <li><a class="" href="#">Electronique <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
@@ -201,39 +201,39 @@
                         <nav>
                             <ul class="nav" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="{{asset('Produit')}}" role="tab"
                                        aria-controls="home" aria-selected="true">All categories</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="{{asset('Info')}}" role="tab"
                                        aria-controls="profile" aria-selected="false">electronique</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="{{asset('Smartphone')}}" role="tab"
                                        aria-controls="contact" aria-selected="false">smartphone</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="design-tab" data-toggle="tab" href="#design" role="tab"
+                                    <a class="nav-link" id="design-tab" data-toggle="tab" href="{{asset('Homme')}}" role="tab"
                                        aria-controls="design" aria-selected="false">mode</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="Web-tab" data-toggle="tab" href="#Web" role="tab"
+                                    <a class="nav-link" id="Web-tab" data-toggle="tab" href="{{asset('Produit')}}" role="tab"
                                        aria-controls="design" aria-selected="false">Consommations</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="Web-tab1" data-toggle="tab" href="#Web1" role="tab"
+                                    <a class="nav-link" id="Web-tab1" data-toggle="tab" href="{{asset('Produit')}}" role="tab"
                                        aria-controls="design" aria-selected="false">vehicules</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="Web-tab11" data-toggle="tab" href="#Web11" role="tab"
+                                    <a class="nav-link" id="Web-tab11" data-toggle="tab" href="{{asset('Produit')}}" role="tab"
                                        aria-controls="design" aria-selected="false">batiment</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="Adobe-XD-tab8" data-toggle="tab" href="#Adobe-XD8" role="tab"
+                                    <a class="nav-link" id="Adobe-XD-tab8" data-toggle="tab" href="{{asset('Meubles')}}" role="tab"
                                        aria-controls="design" aria-selected="false">Meubles</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="Adobe-XD-tab9" data-toggle="tab" href="#Adobe-XD9" role="tab"
+                                    <a class="nav-link" id="Adobe-XD-tab9" data-toggle="tab" href="{{asset('Homme')}}" role="tab"
                                        aria-controls="design" aria-selected="false">bebe</a>
                                 </li>
                             </ul>

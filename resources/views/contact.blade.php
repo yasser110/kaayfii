@@ -34,63 +34,77 @@
 
     <!-- header-start -->
     <header>
-        <div class="header-area ">
-            <div id="sticky-header" class="main-header-area">
-                <div class="container-fluid p-0">
-                    <div class="row align-items-center no-gutters">
-                        <div class="col-xl-2 col-lg-2">
-                            <div class="logo-img">
-                                <a href="index.html">
-                                    <img src="img/logo.png" alt="">
-                                </a>
-                            </div>
+    <div class="header-area ">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container-fluid p-0">
+                <div class="row align-items-center no-gutters">
+                    <div class="col-xl-2 col-lg-2">
+                        <div class="logo-img">
+                            <a href="index.html">
+                                <img src="img/logo.png" alt="">KAAYFII
+                            </a>
                         </div>
-                        <div class="col-xl-7 col-lg-7">
-                            <div class="main-menu  d-none d-lg-block">
-                                <nav>
-                                    <ul id="navigation">
-                                        <li><a href="index.html">home</a></li>
-                                        <li><a href="Courses.html">Courses</a></li>
-                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="course_details.html">course details</a></li>
-                                                <li><a href="elements.html">elements</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="single-blog.html">single-blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="active" href="contact.html">Contact</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
+                    </div>
+                    <div class="col-xl-7 col-lg-7">
+                        <div class="main-menu  d-none d-lg-block">
+                            <nav>
+                                <ul id="navigation">
+                                    <li><a  href="{{asset('home')}}">Accueil</a></li>
+                                    <li><a  href="{{asset('Produit')}}">Produit</a></li>
+                                    <li><a href="#">Electronique <i class="ti-angle-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="{{asset('Smartphone')}}">Smartphone</a></li>
+                                            <li><a href="{{asset('Info')}}">informatique</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a  href="{{asset('Meubles')}}">Meubles</a></li>
+                                    <li><a href="#">Mode <i class="ti-angle-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="{{asset('Homme')}}">Homme</a></li>
+                                            <li><a href="{{asset('Femme')}}">Femme</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="active" href="{{asset('Contact')}}">Contact</a></li>
+                                </ul>
+                            </nav>
                         </div>
-                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                            <div class="log_chat_area d-flex align-items-center">
-                                <a href="#test-form" class="login popup-with-form">
-                                    <i class="flaticon-user"></i>
-                                    <span>log in</span>
-                                </a>
-                                <div class="live_chat_btn">
-                                    <a class="boxed_btn_orange" href="#">
-                                        <i class="fa fa-phone"></i>
-                                        <span>+10 378 467 3672</span>
-                                    </a>
+                    </div>
+                    @guest
+                            <li class="nav-item">
+                                <a  class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                        @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                             </li>
+                     @endif
+                        @else
+                             <li class="nav-item dropdown">
+                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                                 </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                               <a class="dropdown-item-blue" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                 {{ __('Logout') }}
+                                 </a>
+
+                                 <form class="boxed-btn-blue" id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                  @csrf
+                                 </form>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
+                          </li>
+                     @endguest
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+</header>
     <!-- header-end -->
     
         <!-- bradcam_area_start -->

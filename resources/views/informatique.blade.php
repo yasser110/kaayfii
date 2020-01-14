@@ -38,8 +38,8 @@
                     <div class="row align-items-center no-gutters">
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo-img">
-                                <a href="{{asset('home')}}">
-                                    <img src="{{asset('image/img/logo.png')}}" alt="">
+                                <a href="{{asset('home')}}">KAAYFII
+                                    <img src="{{asset('image/img/l.png')}}" alt="">
                                 </a>
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                                         <li><a class="" href="#">Electronique <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a class="boxed_btn_orange" href="{{asset('Smartphone')}}">Smartphone</a></li>
-                                                <li><a class="boxed_btn_orange" href="{{asset('Info')}}">informatique</a></li>
+                                                <li><a class="active" href="{{asset('Info')}}">informatique</a></li>
                                             </ul>
                                         </li>
                                         <li><a class="boxed" href="{{asset('Meubles')}}">Meubles</a></li>
@@ -112,7 +112,10 @@
 
 
     
-
+<!-- testimonial_area_start -->
+<div class="testimonial_area testimonial_bg_1 overlay">
+    <div class="testmonial_active owl-carousel">
+        <div class="single_testmoial">
 
 <div class="all_courses">
     <div class="container">
